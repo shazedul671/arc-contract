@@ -9,32 +9,32 @@ nano README.md
 Then copy and paste the entire content below into nano:
 
 ```markdown
-# ARC Testnet Smart Contract
+ ARC Testnet Smart Contract
 
-A simple **Counter** smart contract deployed on **Arc Testnet** using the Foundry framework.
+A simple Counter smart contract deployed on Arc Testnet using the Foundry framework.
 
-## 🌐 Project Information
+ 🌐 Project Information
 
-- **Blockchain**: Arc Testnet (Circle’s Stablecoin L1)
-- **Framework**: Foundry
-- **Language**: Solidity
-- **Contract Name**: Counter
-- **Contract Address**: `0x90CC912463bdd46acbcC24bd93EF389BE04330b9`
+- Blockchain: Arc Testnet (Circle’s Stablecoin L1)
+- Framework: Foundry
+- Language: Solidity
+- Contract Name: Counter
+- Contract Address: `0x90CC........`
 
-## 📋 Features
+ 📋 Features
 
 - Smart contract deployment on Arc Testnet
 - `increment()` function to increase counter
 - `number()` function to view current count
 - Fully functional on Arc Testnet
 
-## 🚀 Quick Start
+ 🚀 Quick Start
 
-### Prerequisites
+ Prerequisites
 - Foundry (`forge`, `cast`)
 - Arc Testnet Wallet with USDC for gas
 
-### Deploy Command
+ Deploy Command
 ```bash
 forge create src/Counter.sol:Counter \
   --rpc-url https://rpc.testnet.arc.network \
@@ -83,13 +83,13 @@ Made with ❤️ using Foundry
 
 ---
 
-### Save the file:
+ Save the file:
 - Press `Ctrl + O` → Press `Enter` (to save)
 - Press `Ctrl + X` (to exit)
 
 ---
 
-### Verify the file:
+ Verify the file:
 ```bash
 cat README.md
 ```
