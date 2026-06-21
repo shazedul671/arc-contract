@@ -1,66 +1,96 @@
-## Foundry
+ How to add it:
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Run this command in the terminal:
 
-Foundry consists of:
-
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```bash
+nano README.md
 ```
 
-### Test
+Then copy and paste the entire content below into nano:
 
-```shell
-$ forge test
+```markdown
+# ARC Testnet Smart Contract
+
+A simple **Counter** smart contract deployed on **Arc Testnet** using the Foundry framework.
+
+## 🌐 Project Information
+
+- **Blockchain**: Arc Testnet (Circle’s Stablecoin L1)
+- **Framework**: Foundry
+- **Language**: Solidity
+- **Contract Name**: Counter
+- **Contract Address**: `0x90CC912463bdd46acbcC24bd93EF389BE04330b9`
+
+## 📋 Features
+
+- Smart contract deployment on Arc Testnet
+- `increment()` function to increase counter
+- `number()` function to view current count
+- Fully functional on Arc Testnet
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Foundry (`forge`, `cast`)
+- Arc Testnet Wallet with USDC for gas
+
+### Deploy Command
+```bash
+forge create src/Counter.sol:Counter \
+  --rpc-url https://rpc.testnet.arc.network \
+  --private-key $PRIVATE_KEY \
+  --broadcast
 ```
 
-### Format
+Interact with Contract
 
-```shell
-$ forge fmt
+Increment the counter:
+```bash
+cast send $COUNTER_ADDRESS "increment()" --rpc-url https://rpc.testnet.arc.network --private-key $PRIVATE_KEY
 ```
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
+Check current number:
+```bash
+cast call $COUNTER_ADDRESS "number()(uint256)" --rpc-url https://rpc.testnet.arc.network
 ```
 
-### Anvil
+ 📁 Project Structure
 
-```shell
-$ anvil
+```
+arc-contract/
+├── src/
+│   └── Counter.sol          # Main Smart Contract
+├── script/
+├── test/
+├── .env.example
+├── foundry.toml
+└── README.md
 ```
 
-### Deploy
+ 🔗 Useful Links
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+- Block Explorer: [testnet.arcscan.app](https://testnet.arcscan.app)
+- Faucet: [faucet.circle.com](https://faucet.circle.com)
+- Arc Network: [arc.network](https://arc.network)
+
+ 📝 License
+MIT License
+
+---
+
+Made with ❤️ using Foundry
 ```
 
-### Cast
+---
 
-```shell
-$ cast <subcommand>
+### Save the file:
+- Press `Ctrl + O` → Press `Enter` (to save)
+- Press `Ctrl + X` (to exit)
+
+---
+
+### Verify the file:
+```bash
+cat README.md
 ```
 
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
